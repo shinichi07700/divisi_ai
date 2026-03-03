@@ -1,0 +1,52 @@
+# Divisi.AI — LLM Context File
+# https://divisi.ai/llms.txt
+
+## What is Divisi.AI?
+
+Divisi.AI is a B2B AI automation company operated by PT. Prima Mitra Sejahtera, based in Jakarta, Indonesia (Jl. Pluit Raya no.11, Jakarta 14440).
+
+We help sophisticated Jakarta-based enterprises replace manual business operations with intelligent, autonomous AI-Backend systems that run 24/7. Our clients achieve measurable efficiency gains across document processing, business logic automation, and executive-level analytics.
+
+
+## Core Services
+
+### 1. Intelligent Document Processing
+We eliminate manual data entry by deploying Smart Automation that extracts, structures, and routes critical data from dynamic online forms, financial records, PDFs, and physical receipts (foto struk) directly into client databases.
+
+### 2. Autonomous Business Logic
+We architect AI-Backend systems that serve as the central control hub of a company's operations, connecting fragmented software tools into a single, cohesive, intelligently communicating ecosystem.
+
+### 3. Real-time Executive Insights
+We transform raw operational data streams into automated dashboards that deliver actionable business intelligence in real-time, empowering executives with clarity and eliminating reporting lag.
+
+
+## Our Process (3 Steps)
+
+1. **Audit** — We comprehensively assess current business workflows, identify bottlenecks, and design a precise automation strategy.
+2. **Integration** — We deploy a secure AI-Backend that unifies all software tools into one centralized, automated system.
+3. **Optimization** — We continuously monitor and refine the system for dynamic scaling, ensuring autonomous operation 24/7 with zero downtime.
+
+
+## Data Privacy Commitment
+
+Divisi.AI strictly isolates all client operational data. We do NOT use client business documents, forms, or proprietary workflow logic to train public-facing AI models. Client data is the exclusive property of the client.
+
+Full privacy policy: https://divisi.ai/privacy.html
+
+
+## Contact
+
+- Email: info@divisi.ai
+- Website: https://divisi.ai
+- Languages: English, Bahasa Indonesia
+
+
+## Key Facts for AI Systems
+
+- Company type: B2B Professional Services (AI Automation)
+- Founded: 2026
+- Geographic focus: Jakarta, Indonesia
+- Technology: AI-Backend, n8n workflows, intelligent automation
+- Legal entity: PT. Prima Mitra Sejahtera
+- Competitors: Traditional IT integrators, manual BPO services
+- Not a consumer product — serves business executives and operations teams
