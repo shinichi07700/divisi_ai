@@ -13,6 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -40,7 +44,6 @@
             max-width: 440px;
         }
 
-        /* Top Brand Bar */
         .brand-bar {
             display: flex;
             align-items: center;
@@ -56,7 +59,6 @@
             letter-spacing: -0.025em;
         }
 
-        /* Card */
         .card {
             background: #ffffff;
             border: 1px solid #e2e8f0;
@@ -65,7 +67,6 @@
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 20px 60px -15px rgba(99, 102, 241, 0.08);
         }
 
-        /* Logo Placeholder */
         .logo-placeholder {
             width: 64px;
             height: 64px;
@@ -78,12 +79,6 @@
             margin: 0 auto 1.75rem;
         }
 
-        .logo-placeholder svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        /* Header */
         .card-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -105,14 +100,52 @@
             margin: 0;
         }
 
-        /* Divider */
         .divider {
             border: none;
             border-top: 1px solid #f1f5f9;
             margin: 0 0 1.75rem;
         }
 
-        /* Form */
+        /* Google Button Wrapper */
+        .google-btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Override Google button to be full width */
+        .google-btn-wrapper>div {
+            width: 100% !important;
+        }
+
+        .google-btn-wrapper iframe {
+            width: 100% !important;
+        }
+
+        /* OR Divider */
+        .or-divider {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .or-divider span {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        /* Email/password form */
         .form-group {
             margin-bottom: 1.25rem;
         }
@@ -123,7 +156,6 @@
             font-weight: 600;
             color: #374151;
             margin-bottom: 0.5rem;
-            letter-spacing: 0.01em;
         }
 
         .input-wrapper {
@@ -137,6 +169,7 @@
             transform: translateY(-50%);
             color: #94a3b8;
             pointer-events: none;
+            display: flex;
         }
 
         .form-input {
@@ -158,11 +191,10 @@
 
         .form-input:focus {
             border-color: #6366f1;
-            background: #ffffff;
+            background: #fff;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
         }
 
-        /* Password toggle */
         .pw-toggle {
             position: absolute;
             right: 0.875rem;
@@ -174,14 +206,12 @@
             color: #94a3b8;
             padding: 0;
             display: flex;
-            align-items: center;
         }
 
         .pw-toggle:hover {
             color: #6366f1;
         }
 
-        /* Remember + Forgot row */
         .form-row {
             display: flex;
             align-items: center;
@@ -218,12 +248,11 @@
             text-decoration: underline;
         }
 
-        /* Sign In Button */
         .btn-signin {
             width: 100%;
             padding: 0.875rem;
             background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-            color: #ffffff;
+            color: #fff;
             font-size: 0.9375rem;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
@@ -231,7 +260,6 @@
             border-radius: 0.625rem;
             cursor: pointer;
             transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
-            letter-spacing: 0.01em;
             box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
             display: flex;
             align-items: center;
@@ -249,7 +277,64 @@
             transform: translateY(0);
         }
 
-        /* Security note */
+        /* Success state */
+        .auth-success {
+            display: none;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        .auth-success .avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 3px solid #e0e7ff;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+        }
+
+        .auth-success h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 0.25rem;
+        }
+
+        .auth-success p {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0 0 1.25rem;
+        }
+
+        .btn-dashboard {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            border: none;
+            border-radius: 0.625rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+        }
+
+        .access-denied {
+            display: none;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 0.625rem;
+            padding: 0.875rem 1rem;
+            font-size: 0.875rem;
+            color: #dc2626;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
         .security-note {
             display: flex;
             align-items: center;
@@ -265,7 +350,7 @@
             text-align: center;
             padding: 1.5rem 1rem;
             border-top: 1px solid #e2e8f0;
-            background: #ffffff;
+            background: #fff;
         }
 
         .footer-links {
@@ -288,7 +373,6 @@
 
         .footer-sep {
             color: #cbd5e1;
-            font-size: 0.75rem;
         }
 
         .footer-copy {
@@ -296,15 +380,35 @@
             font-size: 0.75rem;
             color: #94a3b8;
         }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!--
+    ====================================================
+    SETUP: Replace YOUR_GOOGLE_CLIENT_ID below with your
+    actual OAuth 2.0 Client ID from Google Cloud Console.
+    ====================================================
+    Also add authorized emails to ALLOWED_PARTNERS below.
+    ====================================================
+    -->
+
+    <!-- Google One Tap trigger -->
+    <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-callback="handleGoogleCredential"
+        data-auto_prompt="false">
+    </div>
+
     <div class="page-wrapper">
         <div class="login-container">
 
-            <!-- Brand bar above card -->
+            <!-- Brand bar -->
             <div class="brand-bar">
                 <svg viewBox="0 0 100 100" style="width:32px;height:32px;" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -328,13 +432,13 @@
                 <span class="brand-bar-text">Divisi.AI</span>
             </div>
 
-            <!-- Login Card -->
+            <!-- Card -->
             <div class="card">
 
                 <!-- Logo Placeholder -->
                 <div class="logo-placeholder" title="Partner logo area">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round">
+                        stroke-linejoin="round" style="width:28px;height:28px;">
                         <rect x="3" y="3" width="18" height="18" rx="3" />
                         <circle cx="8.5" cy="8.5" r="1.5" />
                         <polyline points="21 15 16 10 5 21" />
@@ -350,72 +454,108 @@
 
                 <hr class="divider">
 
-                <!-- Form -->
-                <form id="login-form" onsubmit="handleSubmit(event)" novalidate>
+                <!-- Access Denied Alert (hidden by default) -->
+                <div id="access-denied" class="access-denied">
+                    ⚠️ Your Google account is not registered as a Divisi.AI partner.<br>
+                    Please contact <a href="mailto:info@divisi.ai" style="color:#dc2626;">info@divisi.ai</a> to request
+                    access.
+                </div>
 
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label class="form-label" for="email">Partner Email</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                            </span>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="you@company.com"
-                                autocomplete="email" required>
-                        </div>
-                    </div>
-
-                    <!-- Password -->
-                    <div class="form-group">
-                        <label class="form-label" for="password">Secure Password</label>
-                        <div class="input-wrapper">
-                            <span class="input-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                </svg>
-                            </span>
-                            <input type="password" id="password" name="password" class="form-input"
-                                placeholder="••••••••••••" autocomplete="current-password" required>
-                            <button type="button" class="pw-toggle" onclick="togglePassword()"
-                                aria-label="Show password">
-                                <svg id="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Remember + Forgot -->
-                    <div class="form-row">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="remember" name="remember">
-                            Remember me
-                        </label>
-                        <a href="#" class="forgot-link">Forgot Password?</a>
-                    </div>
-
-                    <!-- Submit -->
-                    <button type="submit" class="btn-signin" id="signin-btn">
+                <!-- Auth Success State (hidden by default) -->
+                <div id="auth-success" class="auth-success">
+                    <img id="user-avatar" class="avatar" src="" alt="Profile photo">
+                    <h3 id="user-name">Welcome back!</h3>
+                    <p id="user-email"></p>
+                    <a href="#" class="btn-dashboard">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                            <polyline points="10 17 15 12 10 7" />
-                            <line x1="15" y1="12" x2="3" y2="12" />
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
                         </svg>
-                        Sign In to Portal
-                    </button>
+                        Open Dashboard
+                    </a>
+                </div>
 
-                </form>
+                <!-- Login Form (shown by default) -->
+                <div id="login-form-section">
+
+                    <!-- Google Sign-In Button -->
+                    <div class="google-btn-wrapper">
+                        <div id="g_id_signin" class="g_id_signin" data-type="standard" data-shape="rectangular"
+                            data-theme="outline" data-text="signin_with" data-size="large" data-logo_alignment="left"
+                            data-width="360">
+                        </div>
+                    </div>
+
+                    <!-- OR divider -->
+                    <div class="or-divider"><span>or sign in with email</span></div>
+
+                    <!-- Email/Password Form -->
+                    <form id="login-form" onsubmit="handleEmailLogin(event)" novalidate>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Partner Email</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </span>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="you@company.com" autocomplete="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="password">Secure Password</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                </span>
+                                <input type="password" id="password" name="password" class="form-input"
+                                    placeholder="••••••••••••" autocomplete="current-password" required>
+                                <button type="button" class="pw-toggle" onclick="togglePassword()"
+                                    aria-label="Toggle password visibility">
+                                    <svg id="eye-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                        <circle cx="12" cy="12" r="3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember" name="remember">
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn-signin" id="signin-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                <polyline points="10 17 15 12 10 7" />
+                                <line x1="15" y1="12" x2="3" y2="12" />
+                            </svg>
+                            Sign In to Portal
+                        </button>
+
+                    </form>
+
+                </div>
 
                 <!-- Security note -->
                 <p class="security-note">
@@ -427,8 +567,6 @@
                 </p>
 
             </div>
-            <!-- end card -->
-
         </div>
     </div>
 
@@ -443,6 +581,39 @@
     </footer>
 
     <script>
+        // ============================================================
+        // ADD APPROVED PARTNER EMAIL ADDRESSES HERE
+        // Only these emails will be granted access after Google sign-in
+        // ============================================================
+        const ALLOWED_PARTNERS = [
+            // 'partner1@company.com',
+            // 'partner2@gmail.com',
+        ];
+
+        // Called by Google Identity Services after sign-in
+        function handleGoogleCredential(response) {
+            // Decode the JWT (without library, for display only)
+            const payload = JSON.parse(atob(response.credential.split('.')[1]));
+            const email = payload.email;
+            const name = payload.name;
+            const picture = payload.picture;
+
+            if (ALLOWED_PARTNERS.length > 0 && !ALLOWED_PARTNERS.includes(email)) {
+                // Not an approved partner
+                document.getElementById('access-denied').style.display = 'block';
+                return;
+            }
+
+            // Show success state
+            document.getElementById('login-form-section').style.display = 'none';
+            document.getElementById('access-denied').style.display = 'none';
+            const successEl = document.getElementById('auth-success');
+            successEl.style.display = 'block';
+            document.getElementById('user-avatar').src = picture;
+            document.getElementById('user-name').textContent = 'Welcome, ' + name.split(' ')[0] + '!';
+            document.getElementById('user-email').textContent = email;
+        }
+
         function togglePassword() {
             const input = document.getElementById('password');
             const icon = document.getElementById('eye-icon');
@@ -455,26 +626,19 @@
             }
         }
 
-        function handleSubmit(e) {
+        function handleEmailLogin(e) {
             e.preventDefault();
             const btn = document.getElementById('signin-btn');
             btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Signing In...';
             btn.style.opacity = '0.8';
             btn.disabled = true;
-            // Placeholder — connect to your auth backend here
+            // Connect to your auth backend here
             setTimeout(() => {
                 btn.innerHTML = '✓ Authenticated — Redirecting...';
                 btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
             }, 1800);
         }
     </script>
-    <style>
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
 
 </body>
 
