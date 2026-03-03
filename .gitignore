@@ -1,0 +1,6 @@
+# Ignore the large standalone Tailwind CLI binary
+tailwindcss.exe
+
+# Standard ignores
+node_modules/
+.DS_Store

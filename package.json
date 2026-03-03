@@ -1,0 +1,24 @@
+{
+  "name": "divisi_ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinichi07700/divisi_ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/shinichi07700/divisi_ai/issues"
+  },
+  "homepage": "https://github.com/shinichi07700/divisi_ai#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.2.1"
+  }
+}

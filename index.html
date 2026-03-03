@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisi.AI | Intelligent Workflow Automation</title>
+    <meta name="description"
+        content="Divisi.AI builds custom intelligent workflow automations to seamlessly connect your platforms, assist human agents, and elevate customer experiences.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body
+    class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Ambient Background Effects -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-400/20 blur-[120px]"></div>
+        <div class="absolute top-[20%] -right-[10%] w-[30%] h-[40%] rounded-full bg-purple-400/20 blur-[120px]"></div>
+        <div class="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] rounded-full bg-indigo-400/10 blur-[150px]"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-slate-200 py-4 shadow-sm">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 text-2xl font-bold tracking-tighter group">
+                <svg viewBox="0 0 100 100"
+                    class="w-10 h-10 shrink-0 transform group-hover:scale-105 transition-transform" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g stroke="#334155" stroke-width="4" stroke-linecap="round">
+                        <line x1="50" y1="50" x2="50" y2="15" />
+                        <line x1="50" y1="50" x2="50" y2="85" />
+                        <line x1="50" y1="50" x2="85" y2="50" />
+                        <line x1="50" y1="50" x2="25" y2="25" />
+                        <line x1="50" y1="50" x2="25" y2="75" />
+                        <line x1="50" y1="15" x2="85" y2="50" />
+                        <line x1="50" y1="85" x2="85" y2="50" />
+                    </g>
+                    <line x1="10" y1="50" x2="50" y2="50" stroke="#6366f1" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="50" cy="15" r="7" fill="#334155" />
+                    <circle cx="50" cy="85" r="7" fill="#334155" />
+                    <circle cx="85" cy="50" r="7" fill="#334155" />
+                    <circle cx="25" cy="25" r="7" fill="#334155" />
+                    <circle cx="25" cy="75" r="7" fill="#334155" />
+                    <circle cx="50" cy="50" r="9" fill="#6366f1" />
+                </svg>
+                <span class="text-slate-900">Divisi.AI</span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                <a href="#features" class="text-slate-600 hover:text-blue-600 transition-colors">Features</a>
+                <a href="#technology" class="text-slate-600 hover:text-blue-600 transition-colors">Technology</a>
+                <a href="#solutions" class="text-slate-600 hover:text-blue-600 transition-colors">Solutions</a>
+                <a href="#contact"
+                    class="px-5 py-2.5 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold border border-blue-200 transition-all shadow-sm">Get
+                    Started</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-slate-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex items-center min-h-[90vh]">
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 mb-8 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                    <span class="text-xs font-semibold text-blue-700 tracking-wider uppercase">divisi.ai Core v2.0
+                        Live</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1] text-slate-900">
+                    Automate Workflows. <br />
+                    <span
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Empower
+                        Agents.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    We design seamless, intelligent workflow automations to capture data, assist human agents with
+                    real-time AI context, and supercharge your operations from omnichannel chats to automated reporting.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#demo"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Explore the Platform
+                    </a>
+                    <a href="#docs"
+                        class="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-medium border border-slate-200 transition-all shadow-sm transform hover:-translate-y-1">
+                        Read the Docs
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D/Graphical Element Simulator (Hero Graphic) -->
+        <div
+            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[300px] pointer-events-none flex justify-center items-end pb-10">
+            <div
+                class="relative w-full max-w-lg h-48 border border-slate-200 rounded-2xl bg-white/70 backdrop-blur-xl shadow-2xl overflow-hidden animate-float">
+                <div
+                    class="absolute top-0 w-full h-8 border-b border-slate-200 bg-slate-100 flex items-center px-4 space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div class="p-6 pt-12 text-sm font-mono text-slate-600">
+                    <p>> awaiting incoming message [tiktok / shopee]...</p>
+                    <p class="mt-2">> payload received. triggering <span
+                            class="text-blue-600">automation_engine</span>...</p>
+                    <p class="mt-2">> AI response generated. routing to human-in-loop...</p>
+                    <p class="mt-4 text-emerald-600 font-medium">> approved. message sent successfully_</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative z-10 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Tailored <span
+                        class="text-blue-600">Workflow Solutions</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">We connect your favorite platforms to create unstoppable
+                    customer service and operations workflows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Solution 1 -->
+                <div
+                    class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 transition-all hover:shadow-xl group flex flex-col items-start shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shrink-0">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Smart Document OCR</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">Automate receipt and invoice scanning.
+                        Extracted data connects securely to Google Drive, feeds directly into Google Sheets, and powers
+                        dynamic Looker Studio dashboards.</p>
+                    <div class="mt-auto">
+                        <a href="https://lookerstudio.google.com/u/0/reporting/1bd35003-396f-4fc0-b067-9eb5c63e89b1/page/ttVbF"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors">
+                            View Live Dashboard
+                            <svg class="w-4 h-4 ml-1.5 transition-transform group-hover:translate-x-1" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Solution 2 -->
+                <div
+                    class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-purple-300 transition-all hover:shadow-xl group shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">24/7 AI Booking Bots</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Deploy specialized chatbots (e.g., Pet Services CS
+                        Bot) to handle customer inquiries 24/7. Automatically sync successful bookings directly to your
+                        Google Calendar.</p>
+                </div>
+
+                <!-- Solution 3 -->
+                <div
+                    class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-pink-300 transition-all hover:shadow-xl group shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-pink-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Omnichannel Support Hub</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Centralize messages from TikTok and Shopee. AI
+                        drafts real-time responses while maintaining a human-in-the-loop system to intervene via your
+                        custom web app dashboard.</p>
+                </div>
+
+                <!-- Solution 4 -->
+                <div
+                    class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-indigo-300 transition-all hover:shadow-xl group shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-indigo-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Automated Finance Ops</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Automate customer invoicing and log payment
+                        receipts effortlessly into Google Sheets. Use Telegram bots to quickly query deadlines, PO
+                        statuses, and payment records.</p>
+                </div>
+
+                <!-- Solution 5 -->
+                <div
+                    class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-emerald-300 transition-all hover:shadow-xl group flex flex-col items-start md:col-span-2 md:flex-row md:items-center md:space-x-8 shadow-sm">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center mb-6 md:mb-0 group-hover:scale-110 transition-transform shrink-0">
+                        <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-slate-900">Field Agent Activity Tracker</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Empower field agents to log daily activities,
+                            precise GPS locations, and Google Maps links directly via Telegram groups. Management gains
+                            real-time oversight through comprehensive, dynamic Looker Studio reports detailing employee
+                            performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white py-12">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 text-xl font-bold tracking-tighter mb-2">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 shrink-0" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g stroke="#334155" stroke-width="4" stroke-linecap="round">
+                                <line x1="50" y1="50" x2="50" y2="15" />
+                                <line x1="50" y1="50" x2="50" y2="85" />
+                                <line x1="50" y1="50" x2="85" y2="50" />
+                                <line x1="50" y1="50" x2="25" y2="25" />
+                                <line x1="50" y1="50" x2="25" y2="75" />
+                                <line x1="50" y1="15" x2="85" y2="50" />
+                                <line x1="50" y1="85" x2="85" y2="50" />
+                            </g>
+                            <line x1="10" y1="50" x2="50" y2="50" stroke="#6366f1" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="50" cy="15" r="7" fill="#334155" />
+                            <circle cx="50" cy="85" r="7" fill="#334155" />
+                            <circle cx="85" cy="50" r="7" fill="#334155" />
+                            <circle cx="25" cy="25" r="7" fill="#334155" />
+                            <circle cx="25" cy="75" r="7" fill="#334155" />
+                            <circle cx="50" cy="50" r="9" fill="#6366f1" />
+                        </svg>
+                        <span class="text-slate-900">Divisi.AI</span>
+                    </div>
+                    <p class="text-slate-500 text-sm">© 2026 Divisi.AI. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-slate-500 hover:text-blue-600 transition-colors">Twitter</a>
+                    <a href="#" class="text-slate-500 hover:text-blue-600 transition-colors">GitHub</a>
+                    <a href="#" class="text-slate-500 hover:text-blue-600 transition-colors">Discord</a>
+                    <a href="#" class="text-slate-500 hover:text-blue-600 transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
