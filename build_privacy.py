@@ -78,6 +78,10 @@ privacy_content = """
     </section>
 """
 
+html_to_write = header_nav + privacy_content + footer
+html_to_write = html_to_write.replace('href="#', 'href="index.html#')
+html_to_write = html_to_write.replace('href="index.html#"', 'href="index.html"')
+
 with open('privacy.html', 'w', encoding='utf-8') as f:
-    f.write(header_nav + privacy_content + footer)
+    f.write(html_to_write)
 print("privacy.html successfully built using inherited design layout.")
