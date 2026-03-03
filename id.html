@@ -26,7 +26,17 @@
     <!-- Navigation -->
     <nav
         class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/80 border-b border-slate-200 py-4 shadow-sm">
-        <div class="container mx-auto px-4 md:px-12 flex flex-row-reverse md:flex-row justify-between items-center">
+        <div class="container mx-auto px-4 md:px-12 flex justify-between items-center">
+            <!-- Mobile Menu Button (LEFT on mobile, hidden on desktop) -->
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-btn" class="text-slate-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16">
+                        </path>
+                    </svg>
+                </button>
+            </div>
             <a href="#" class="flex items-center space-x-3 text-2xl font-bold tracking-tighter group">
                 <svg viewBox="0 0 100 100"
                     class="w-10 h-10 shrink-0 transform group-hover:scale-105 transition-transform" fill="none"
@@ -62,42 +72,31 @@
                 <a href="#consultation"
                     class="px-5 py-2.5 rounded-full bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold border border-blue-200 transition-all shadow-sm">Konsultasi</a>
             </div>
-            <!-- Mobile Menu Button (LEFT) -->
-            <div class="flex items-center md:hidden">
-                <button id="mobile-menu-btn" class="text-slate-800 mr-4">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16">
-                        </path>
-                    </svg>
-                </button>
-            </div>
     </nav>
 
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu"
-        class="fixed inset-0 z-[60] bg-white transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="flex items-center justify-between p-6 border-b border-slate-200">
-            <span class="text-xl font-bold text-slate-900">Menu</span>
-            <button id="mobile-menu-close" class="text-slate-800">
+        style="position:fixed;inset:0;z-index:60;background:white;transform:translateX(100%);transition:transform 0.3s ease;display:none;"
+        class="md:hidden">
+        <div
+            style="display:flex;align-items:center;justify-content:space-between;padding:1.5rem;border-bottom:1px solid #e2e8f0;">
+            <span style="font-size:1.25rem;font-weight:700;color:#0f172a;">Menu</span>
+            <button id="mobile-menu-close" style="color:#1e293b;">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                     </path>
                 </svg>
             </button>
         </div>
-        <div class="flex flex-col p-6 space-y-6 text-lg font-medium">
-            <a href="#process" class="text-slate-700 hover:text-blue-600 transition-colors"
-                onclick="closeMobileMenu()">Proses</a>
-            <a href="#solutions" class="text-slate-700 hover:text-blue-600 transition-colors"
-                onclick="closeMobileMenu()">Solusi</a>
-            <a href="#consultation" class="text-slate-700 hover:text-blue-600 transition-colors"
-                onclick="closeMobileMenu()">Konsultasi</a>
-            <hr class="border-slate-200">
-            <div class="flex items-center space-x-3">
-                <a href="index.html" class="text-slate-500 hover:text-blue-600 font-semibold">EN</a>
-                <span class="text-slate-300">|</span>
-                <span class="text-blue-600 font-bold">ID</span>
+        <div style="display:flex;flex-direction:column;padding:1.5rem;gap:1.5rem;font-size:1.125rem;font-weight:500;">
+            <a href="#process" style="color:#334155;" onclick="closeMobileMenu()">Proses</a>
+            <a href="#solutions" style="color:#334155;" onclick="closeMobileMenu()">Solusi</a>
+            <a href="#consultation" style="color:#334155;" onclick="closeMobileMenu()">Konsultasi</a>
+            <hr style="border-color:#e2e8f0;">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+                <a href="index.html" style="color:#64748b;font-weight:600;">EN</a>
+                <span style="color:#cbd5e1;">|</span>
+                <span style="color:#2563eb;font-weight:700;">ID</span>
             </div>
         </div>
     </div>
@@ -106,8 +105,14 @@
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menuClose = document.getElementById('mobile-menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
-        function openMobileMenu() { mobileMenu.classList.remove('translate-x-full'); mobileMenu.classList.add('translate-x-0'); }
-        function closeMobileMenu() { mobileMenu.classList.remove('translate-x-0'); mobileMenu.classList.add('translate-x-full'); }
+        function openMobileMenu() {
+            mobileMenu.style.display = 'block';
+            setTimeout(function () { mobileMenu.style.transform = 'translateX(0)'; }, 10);
+        }
+        function closeMobileMenu() {
+            mobileMenu.style.transform = 'translateX(100%)';
+            setTimeout(function () { mobileMenu.style.display = 'none'; }, 300);
+        }
         menuBtn.addEventListener('click', openMobileMenu);
         menuClose.addEventListener('click', closeMobileMenu);
     </script>
@@ -328,14 +333,6 @@
                         <h4 class="font-semibold text-slate-900">Perusahaan</h4>
                         <a href="#process" class="text-slate-500 hover:text-blue-600 transition-colors">Proses</a>
                         <a href="#solutions" class="text-slate-500 hover:text-blue-600 transition-colors">Solusi</a>
-                        <div class="flex items-center space-x-2 border-l border-slate-300 pl-6 mr-6">
-                            <a href="index.html"
-                                class="text-slate-500 hover:text-blue-600 transition-colors font-semibold">EN</a>
-                            <span class="text-slate-300">|</span>
-                            <span class="text-blue-600 font-bold select-none">ID</span>
-                        </div>
-                        <a href="#consultation"
-                            class="text-slate-500 hover:text-blue-600 transition-colors">Konsultasi</a>
                     </div>
                     <div class="flex flex-col space-y-3">
                         <h4 class="font-semibold text-slate-900">Sumber Daya</h4>
