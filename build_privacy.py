@@ -6,8 +6,8 @@ with open('index.html', 'r', encoding='utf-8') as f:
 # Replace the title specifically for this sub-page
 html = html.replace('<title>Divisi.AI | Smart Automation for Jakarta Enterprises</title>', '<title>Privacy Policy - Divisi.AI</title>')
 
-nav_end_idx = html.find('</nav>') + 6
-header_nav = html[:nav_end_idx]
+hero_start_idx = html.find('<!-- Hero Section -->')
+header_nav = html[:hero_start_idx]
 
 footer_start_idx = html.find('<!-- Footer -->')
 footer = html[footer_start_idx:]
